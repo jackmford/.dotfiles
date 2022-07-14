@@ -10,3 +10,6 @@ set smarttab
 set wrap
 set number
 set visualbell
+set re=0
+set hlsearch
+set incsearch
