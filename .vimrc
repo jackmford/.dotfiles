@@ -4,7 +4,7 @@ set backspace=2
 set autoindent
 set cursorline
 :imap jj <Esc>
-set tabstop =2
+set tabstop=2
 set shiftwidth=2
 set smarttab
 set wrap
