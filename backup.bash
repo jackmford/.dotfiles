@@ -42,16 +42,22 @@ fi
 
 # Create a .gitignore file to exclude unnecessary files
 GITIGNORE="$DOTFILES_DIR/.gitignore"
-echo "Creating .gitignore file..."
-cat > "$GITIGNORE" <<EOL
+
+if [ -f "$GITIGNORE" ]; then
+    echo "Gitignore already present."
+else
+    echo "Creating .gitignore file..."
+    cat > "$GITIGNORE" <<EOL
 *.swp
 *.bak
 *~
 *.tmp
 EOL
+fi
 
 # Commit and push the changes
 cd "$DOTFILES_DIR"
 git add .
 git commit -m "Backing up dotfiles"
 git push origin main
+

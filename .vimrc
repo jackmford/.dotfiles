@@ -5,7 +5,6 @@ set shiftwidth=2
 set backspace=2
 set autoindent
 set cursorline
-:imap jj <Esc>
 set tabstop=2
 set shiftwidth=2
 set smarttab
@@ -19,7 +18,6 @@ set clipboard=unnamedplus
 
 " H to move to first char in line
 noremap H ^
-
 " L to move to last char in line
 noremap L g_
 
@@ -32,6 +30,10 @@ nmap <silent> <c-k> :wincmd k<CR>
 nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
+
+" jj to esc
+imap jj <Esc>
+
 
 " Ctrl e to exit terminal mode
 tnoremap <C-e> <C-\><C-n>
