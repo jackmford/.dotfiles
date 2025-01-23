@@ -34,3 +34,4 @@ require("nvim-tree").setup({
 require('lualine').setup()
 require "autopairs"
 require("lsp.null-ls")
+require("obsidian_daily_note")
