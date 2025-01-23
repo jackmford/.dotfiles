@@ -62,6 +62,7 @@ which_key.add({
   { "<leader>c", "<cmd>bdelete<CR>", desc = "Close Buffer", nowait = true, remap = false },
   { "<leader>e", "<cmd>NvimTreeFocus<cr>", desc = "Explorer", nowait = true, remap = false },
   { "<leader>f", "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", desc = "Find files", nowait = true, remap = false },
+  { "<leader>dn", "<cmd>ObsidianDailyNote<cr>", desc = "Open Obsidian Daily Note", nowait = true, remap = false},
   { "<leader>g", group = "Git", nowait = true, remap = false },
   { "<leader>gR", "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", desc = "Reset Buffer", nowait = true, remap = false },
   { "<leader>gb", "<cmd>Telescope git_branches<cr>", desc = "Checkout branch", nowait = true, remap = false },
