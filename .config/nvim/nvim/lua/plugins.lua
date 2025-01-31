@@ -45,6 +45,8 @@ return packer.startup(function(use)
   use("nvim-lua/plenary.nvim")  -- Lua functions that Telescope plugin use
   use("nvim-telescope/telescope.nvim")
 
+  use {"rose-pine/neovim", as = "rose-pine"}
+
   -- Install Which Key
   use("folke/which-key.nvim")
 

@@ -1,5 +1,5 @@
 -- Path to the directory where Obsidian stores daily notes
-local daily_note_dir = "/Users/jackfordyce/Library/Mobile Documents/iCloud~md~obsidian/Documents/Obsidian Vault/para/1 Projects/2025"
+local daily_note_dir = "/Users/jackfordyce/Library/Mobile Documents/iCloud~md~obsidian/Documents/Obsidian Vault/para/1 Projects/2025/dailys/"
 
 local Job = require("plenary.job")
 
@@ -61,11 +61,6 @@ local function handle_response(response, err)
   end)
 end
 
-vim.api.nvim_create_user_command("FetchDataPlenary", function()
-  fetch_api_data("localhost:8080/random-tip", handle_response)
-end, {})
-
-
 --vim.api.nvim_create_user_command("PopulateDailyNote", populate_daily_note_with_api, {})
 
 -- Function to insert content into a new or empty daily note
@@ -100,7 +95,7 @@ end
 vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
   pattern = daily_note_dir .. "/*.md",
   callback = function ()
-    fetch_api_data("localhost:8080/random-tip", handle_response)
+    fetch_api_data("https://vimtricks.jackmitchellfordyce.com/random-tip", handle_response)
   end,
 })
 
