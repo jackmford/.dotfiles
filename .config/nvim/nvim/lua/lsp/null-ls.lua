@@ -9,7 +9,20 @@ local formatting = null_ls.builtins.formatting
 null_ls.setup({
   debug = false,
   sources = {
-    formatting.prettier.with({ extra_args = { "--prose-wrap", "always", "--print-width", "80", "--no-semi", "--single-quote", "--jsx-single-quote" } }),
-    formatting.black.with({ extra_args = { "-l", "90", "--preview", "--fast" } }),
+    formatting.prettier.with({
+      extra_args = {
+        "--prose-wrap", "always",
+        "--print-width", "100",
+        "--no-semi", "--single-quote",
+        "--jsx-single-quote"
+      }
+    }),
+    formatting.black.with({
+      extra_args = {
+        "-l", "90",
+        "--preview",
+        "--fast"
+      }
+    }),
   },
 })

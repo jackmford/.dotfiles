@@ -1,7 +1,6 @@
 -- set leader key to space
 vim.g.mapleader = " "
 
-local keymap = vim.keymap -- for conciseness
 local status_ok, which_key = pcall(require, "which-key")
 if not status_ok then
   return
@@ -43,16 +42,15 @@ local setup = {
   },
 }
 
-local opts = {
-  mode = "n", -- NORMAL mode
-  prefix = "<leader>",
-  buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-  silent = true, -- use `silent` when creating keymaps
-  noremap = true, -- use `noremap` when creating keymaps
-  nowait = true, -- use `nowait` when creating keymaps
-}
+--local opts = {
+--  mode = "n", -- NORMAL mode
+--  prefix = "<leader>",
+--  buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+--  silent = true, -- use `silent` when creating keymaps
+--  noremap = true, -- use `noremap` when creating keymaps
+--  nowait = true, -- use `nowait` when creating keymaps
+--}
 
-local mappings = 
 which_key.add({
   { "<leader>E", "<cmd>NvimTreeToggle<cr>", desc = "ExplorerToggle", nowait = true, remap = false },
   { "<leader>F", "<cmd>Telescope live_grep theme=ivy<cr>", desc = "Find Text", nowait = true, remap = false },
@@ -114,4 +112,3 @@ which_key.add({
 })
 
 which_key.setup(setup)
---which_key.register(mappings, opts)
