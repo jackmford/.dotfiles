@@ -35,40 +35,29 @@ local function handle_response(response, err)
     -- Check if the buffer is empty
     if vim.fn.line("$") == 1 and vim.fn.getline(1) == "" then
       -- Define your content
-      local content = {
-        "#daily",
-        "",
-        "Tasks:",
-        "- [ ] Make bed",
-        "- [ ] Vitamins + Moisturize",
-        "- [ ] Leetcode",
-        "",
-        "Scratchpad:",
-        "",
-        "💻 Log:",
-        "",
-        "Journal:",
-        "",
-        string.format("Vim Tip: %s", data.tip)
-      }
-
-      -- Insert the content
-      vim.api.nvim_buf_set_lines(0, 0, -1, false, content)
-
-      -- Optionally, save the file immediately
-      vim.cmd("write")
-    end
-  end)
-end
-
---vim.api.nvim_create_user_command("PopulateDailyNote", populate_daily_note_with_api, {})
-
--- Function to insert content into a new or empty daily note
-local function populate_daily_note()
-  -- Check if the buffer is empty
-  if vim.fn.line("$") == 1 and vim.fn.getline(1) == "" then
-    -- Define your content
     local content = {
+    '## Tasks Due Today',
+    '```dataview',
+    'TASK',
+    'FROM "1 Projects"',
+    '```',
+    '',
+    '## Overdue Tasks',
+    '```dataview',
+    'TASK',
+    'FROM "1 Projects"',
+    'WHERE contains(text, "due:") ',
+    'AND date(split(text, "due:")[1]) < date(today)',
+    'AND !completed',
+    'SORT date(split(text, "due:")[1]) ASC',
+    '```',
+    '',
+    '## Notes',
+    '- ',
+    '',
+    '## Review',
+    '- [ ] Review completed tasks',
+    '- [ ] Plan for tomorrow',
       "#daily",
       "",
       "Tasks:",
@@ -81,14 +70,16 @@ local function populate_daily_note()
       "💻 Log:",
       "",
       "Journal:",
+      string.format("Vim Tip: %s", data.tip)
     }
 
-    -- Insert the content
-    vim.api.nvim_buf_set_lines(0, 0, -1, false, content)
+      -- Insert the content
+      vim.api.nvim_buf_set_lines(0, 0, -1, false, content)
 
-    -- Optionally, save the file immediately
-    vim.cmd("write")
-  end
+      -- Optionally, save the file immediately
+      vim.cmd("write")
+    end
+  end)
 end
 
 -- Autocommand to trigger when opening a file in the daily note directory
