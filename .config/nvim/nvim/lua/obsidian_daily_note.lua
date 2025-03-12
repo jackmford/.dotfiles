@@ -39,7 +39,6 @@ local function handle_response(response, err)
       '## ✅ Tasks Due Today',
       '```dataview',
       'TASK',
-      'FROM "1 Projects"',
       'FROM "para/1 Projects" OR "para/0 Inbox"',
       'WHERE contains(text, "due:") ',
       'AND date(split(text, "due:")[1]) = date(today)',
