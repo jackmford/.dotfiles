@@ -1,5 +1,5 @@
 -- Path to the directory where Obsidian stores daily notes
-local daily_note_dir = "/Users/jackfordyce/Library/Mobile Documents/iCloud~md~obsidian/Documents/Obsidian Vault/para/1 Projects/2025/dailys/"
+local daily_note_dir = "/Users/jackfordyce/Library/Mobile Documents/iCloud~md~obsidian/Documents/Obsidian Vault/para/1 Projects/2025/dailys"
 
 local Job = require("plenary.job")
 
